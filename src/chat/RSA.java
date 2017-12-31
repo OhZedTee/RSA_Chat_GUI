@@ -63,7 +63,14 @@ public class RSA {
 		BigInteger phi = (p.subtract(one)).multiply(q.subtract(one));
 		
 		modulus = p.multiply(q);
-		publicKey = new BigInteger("65537");
+		
+		//Public Key Generation		
+		
+		do publicKey = new BigInteger(phi.bitLength(), random);
+		while (publicKey.compareTo(one) <= 0
+		    || publicKey.compareTo(phi) >= 0
+		    || !publicKey.gcd(phi).equals(one));	
+		
 		privateKey = publicKey.modInverse(phi);
 	}
 	

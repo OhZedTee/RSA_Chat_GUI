@@ -139,7 +139,7 @@ public class Client extends JFrame {
 								
 								if (message.equalsIgnoreCase("q!"))
 								{
-									ta_Msg.setText("Your Friend has left the chat! Press the Exit Button to Quit now\n");
+									ta_Msg.setText(ta_Msg.getText() + "\n\n" + "Your Friend has left the chat! Press the Exit Button to Quit now\n");
 									btn_Status.setText("Disconnected!");
 									btn_Status.setForeground(Color.RED);
 									isActive = false;
@@ -202,7 +202,7 @@ public class Client extends JFrame {
 					{
 						btn_Status.setText("Disconnected!");
 						btn_Status.setForeground(Color.RED);
-						ta_Msg.setText("You have quit the chat! Press the Exit Button to Quit now\n");
+						ta_Msg.setText(ta_Msg.getText() + "\n\n" + "You have quit the chat! Press the Exit Button to Quit now\n");
 						isActive = false;
 						isDisconnected = true;
 						btn_Send.setEnabled(false);
